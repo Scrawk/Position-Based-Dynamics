@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using Common.Mathematics.LinearAlgebra;
 using Common.Geometry.Shapes;
-using Common.Unity.Cameras;
 using Common.Unity.Drawing;
 using Common.Unity.Mathematics;
 
@@ -62,7 +61,6 @@ namespace PositionBasedDynamics
     
             CreateSpheres();
 
-            RenderEvent.AddRenderEvent(Camera.main, DrawOutline);
         }
 
         void Update()
@@ -78,11 +76,13 @@ namespace PositionBasedDynamics
 
         void OnDestroy()
         {
-            RenderEvent.RemoveRenderEvent(Camera.main, DrawOutline);
+            
         }
 
-        private void DrawOutline(Camera camera)
+        private void OnRenderObject()
         {
+            Camera camera = Camera.current;
+
             Vector3 min = new Vector3(-GRID_SIZE, 0, -GRID_SIZE);
             Vector3 max = new Vector3(GRID_SIZE, 0, GRID_SIZE);
 

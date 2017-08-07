@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 using Common.Mathematics.LinearAlgebra;
 using Common.Geometry.Shapes;
-using Common.Unity.Cameras;
 using Common.Unity.Drawing;
 using Common.Unity.Mathematics;
 
@@ -54,8 +53,6 @@ namespace PositionBasedDynamics
             Solver = new FluidSolver3d(Body);
             Solver.AddForce(new GravitationalForce3d());
      
-            RenderEvent.AddRenderEvent(Camera.main, DrawOutline);
-
         }
 
         void Update()
@@ -67,8 +64,6 @@ namespace PositionBasedDynamics
 
         void OnDestroy()
         {
-
-            RenderEvent.RemoveRenderEvent(Camera.main, DrawOutline);
 
             if (FluidSpheres != null)
             {
@@ -90,10 +85,12 @@ namespace PositionBasedDynamics
 
         }
 
-        private void DrawOutline(Camera camera)
+        private void OnRenderObject()
         {
             if (drawLines)
             {
+                Camera camera = Camera.current;
+
                 Matrix4x4d m = MathConverter.ToMatrix4x4d(transform.localToWorldMatrix);
                 DrawLines.DrawBounds(camera, Color.red, OuterBounds, m);
                 DrawLines.DrawBounds(camera, Color.red, InnerBounds, m);

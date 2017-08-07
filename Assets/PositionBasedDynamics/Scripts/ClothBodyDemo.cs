@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using Common.Mathematics.LinearAlgebra;
 using Common.Geometry.Shapes;
-using Common.Unity.Cameras;
 using Common.Unity.Drawing;
 using Common.Unity.Mathematics;
 
@@ -70,8 +69,6 @@ namespace PositionBasedDynamics
             Solver.CollisionIterations = 2;
             Solver.SleepThreshold = 1;
 
-            RenderEvent.AddRenderEvent(Camera.main, DrawOutline);
-
             CreateSpheres();
         }
 
@@ -88,7 +85,6 @@ namespace PositionBasedDynamics
 
         void OnDestroy()
         {
-            RenderEvent.RemoveRenderEvent(Camera.main, DrawOutline);
 
             if (Spheres != null)
             {
@@ -97,10 +93,12 @@ namespace PositionBasedDynamics
             }
         }
 
-        private void DrawOutline(Camera camera)
+        private void OnRenderObject()
         {
             if (drawLines)
             {
+                Camera camera = Camera.current;
+
                 Vector3 min = new Vector3(-GRID_SIZE, 0, -GRID_SIZE);
                 Vector3 max = new Vector3(GRID_SIZE, 0, GRID_SIZE);
 
