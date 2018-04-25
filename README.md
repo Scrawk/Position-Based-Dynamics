@@ -14,7 +14,7 @@ All the code runs on the CPU so performance will be poor especially for the more
 
 PBD is also the method used for Nivida's [Flex](https://developer.nvidia.com/flex) but that runs on the GPU.
 
-See the [home page](https://www.digital-dust.com/single-post/2017/04/09/Position-based-dynamics-in-Unity) for more information and unity package download.
+You can download a unity package [here](https://app.box.com/s/ek0000kfn1hzo2n3yp2mtkrfeujxj5fp).
 
 Below is the PBD cloth scene. The points in the green bounds are static so the cloth will hang from those points.
 
