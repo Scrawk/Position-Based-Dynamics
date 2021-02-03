@@ -24,7 +24,7 @@ Below is a PBD rigid body. Each point moves independently but the shape matching
 
 Below is a PBD deformable object. Its is made of tetrahedrons and bends. The points in the green bounds are static like in the cloth scene.
 
-![PBDDeformable(./Media/PBDDeformable.jfif)
+![PBDDeformable](./Media/PBDDeformable.jfif)
 
 Below is PBD fluid. The spheres represent the fluids particles and they will flow together like in a fluid. You can see them forming a wave. Given enough particles it will look like water but its quite demanding to do on a single thread on the CPU so you will have to make do with a limited amount of particles.
 
