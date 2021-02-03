@@ -72,7 +72,7 @@ namespace PositionBasedDynamics
             CreateSpheres();
         }
 
-        void Update()
+        void FixedUpdate()
         {
             int iterations = 4;
             double dt = timeStep / iterations;

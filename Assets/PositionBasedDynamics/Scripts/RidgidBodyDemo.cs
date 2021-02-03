@@ -63,7 +63,7 @@ namespace PositionBasedDynamics
 
         }
 
-        void Update()
+        void FixedUpdate()
         {
             int iterations = 4;
             double dt = timeStep / iterations;

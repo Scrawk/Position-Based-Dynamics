@@ -55,7 +55,7 @@ namespace PositionBasedDynamics
      
         }
 
-        void Update()
+        void FixedUpdate()
         {
             Solver.StepPhysics(timeStep);
 
