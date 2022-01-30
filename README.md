@@ -29,3 +29,18 @@ Below is a PBD deformable object. Its is made of tetrahedrons and bends. The poi
 Below is PBD fluid. The spheres represent the fluids particles and they will flow together like in a fluid. You can see them forming a wave. Given enough particles it will look like water but its quite demanding to do on a single thread on the CPU so you will have to make do with a limited amount of particles.
 
 ![PBDFluid](./Media/PBDFluid.jfif)
+
+List of physics projects
+
+[Position-Based-Dynamics](https://github.com/Scrawk/Position-Based-Dynamics)\
+[PBD-Fluid-in-Unity](https://github.com/Scrawk/PBD-Fluid-in-Unity)\
+[PU-GEMS-NBody-Simulation](https://github.com/Scrawk/GPU-GEMS-NBody-Simulation)\
+[GPU-GEMS-2D-Fluid-Simulation](https://github.com/Scrawk/GPU-GEMS-2D-Fluid-Simulation)\
+[CyclonePhysicsEngine](https://github.com/Scrawk/CyclonePhysicsEngine)\
+[2D-Deformable-body-in-Unity](https://github.com/Scrawk/2D-Deformable-body-in-Unity)
+
+
+
+
+
+
